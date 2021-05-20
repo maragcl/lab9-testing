@@ -8,7 +8,7 @@ class Badge extends React.Component{
   render(){
     const {firstName, lastName, jobTitle, twitter} = this.props;
     return(
-      <div className="Badge">
+      <div className="Badge" data-test-id="badge-container">
         <div className="Badge__header">
           <img src={confLogo} alt="Logo de la conferencia"/>
         </div>

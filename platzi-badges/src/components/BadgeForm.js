@@ -2,14 +2,10 @@ import React from 'react';
 
 class BadgeForm extends React.Component{  
 
-  handleClick = (e) => {
-    console.log('Button was pressed');
-  }
-
   render(){
     return (
       <div>        
-        <form onSubmit={this.props.onSubmit} >
+        <form onSubmit={this.props.onSubmit} data-test-id="badge-form-container">
           <div className="form-group">
             <label>First name</label>
             <input 
@@ -56,7 +52,7 @@ class BadgeForm extends React.Component{
             value={this.props.formValues.twitter}/>
             <input type="text"/>
           </div>
-          <button type="submit" onClick={this.handleClick} className="btn btn-primary">Save</button>
+          <button type="submit" className="btn btn-primary">Save</button>
           
           {this.props.error && (
             <p className="text-danger">{this.props.error.message}</p>

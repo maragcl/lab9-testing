@@ -49,9 +49,9 @@ class BadgeEdit extends React.Component{
   handleSubmit = async e => {
     e.preventDefault()
     this.setState({loading: true, error: null})
-
+    console.log(this.state.form);
     try {
-      await api.badges.update(this.state.form)
+      await api.badges.update(this.props.match.params.badgeId, this.state.form)
       this.setState({loading: false})
       this.props.history.push('/Badges')
     } catch (error) {
